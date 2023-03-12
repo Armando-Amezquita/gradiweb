@@ -1,4 +1,3 @@
-import axios from 'axios'
 const URLPRODUCTSELL = `https://gradistore-spi.herokuapp.com/orders`
 const URLDISCOVER = `https://gradistore-spi.herokuapp.com/products/all`
 
