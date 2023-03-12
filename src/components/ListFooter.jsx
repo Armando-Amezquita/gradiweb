@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ListFooter({title, subtitles, showMenu}) {
+export function ListFooter({id, title, subtitles, showMenu}) {
     
   return (
     <div>
@@ -8,7 +8,7 @@ export function ListFooter({title, subtitles, showMenu}) {
             {title} <span></span>
         </p>
 
-        <div className='footer-submenu-product' >
+        <div className='footer-submenu-product' id={id} >
             {
                 subtitles.map((e, idx) => (
                     <span className='footer-submenu-product-title' key={idx}>{e}</span>

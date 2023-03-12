@@ -5,12 +5,11 @@ import social from '../assets/icons/Vector (2).png'
 
 export function Footer() {
 
-    const handleChange = (e) => {
+    const handleChange = (e, key) => {
         e.preventDefault()
-        const showMenu = document.querySelector('.footer-submenu-product')
+        const showMenu = document.getElementById(key)
         showMenu.classList.toggle('footer-submenu-product-show')
     }
-
     
   return (
     <footer className='footer'>
@@ -29,8 +28,9 @@ export function Footer() {
                         <ListFooter 
                             key={item.id}
                             title={item.title}
+                            id={item.id}
                             subtitles={item.subtitles}
-                            showMenu={handleChange}
+                            showMenu={(e) => handleChange(e, item.id)}
                         />
                     ))
                 }
