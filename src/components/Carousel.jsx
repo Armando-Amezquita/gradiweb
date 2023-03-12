@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { Cards } from './Cards';
-import image1 from '../assets/img/image3.png';
-import arrowleft from '../assets/icons/arrow-left.svg'
-import arrowright from '../assets/icons/arrow-right.svg'
-import image2 from '../assets/img/image25.png';
+import React from 'react'
+import imge from '../assets/img/image3.png'
+import { Cards } from './Cards'
 
 export function Carousel({discover}) {
-    const images = [image1, image2]
+
+    /* const images = [image1, image2]
     const [selectIndex, setSelectIndex] = useState(0)
     const [selectImage, setSelectImage] = useState(images[0]);
 
@@ -23,39 +21,80 @@ export function Carousel({discover}) {
 
     const next = () => {
         selectNewImage(selectIndex, images)
-    }
+    } */
+    // let span = document.querySelectorAll('.let')
+    // let span2 = document.querySelectorAll('.let2')
+    // let produt = document.getElementsByClassName('.produt')
+    // let productPage = Math.ceil(produt.length/4)
+    // let l = 0
+    // let movePer = 25.34
+    // let maxMove = 203
+
+    // //mobile
+    // let mobileView = window.matchMedia("(max-width: 768px)")
+    // if(mobileView.matches){
+    //     movePer = 50.36
+    //     maxMove = 504
+    // }
+    // let rigthMove = () => {
+    //     l = l + movePer
+    //     if(produt == 1){
+    //         l=0
+    //     }
+    //     for (const i of produt) {
+    //         if(l > maxMove){l = l -movePer}
+    //         i.style.left = '-' + l + '%'
+    //     }
+    // }
+
+    // let leftMove = () => {
+    //     console.log('aqui')
+    //     l = l -movePer
+    //     if(l<=0){l=0}
+    //     for (const i of produt) {
+    //         if(productPage > 1)
+    //         i.style.left = '-' + l + '%'
+    //     }
+    // }
+
+    // console.log('span', span)
+    // // span[1].onclick = () =>{rigthMove()}
+    // // span[1].onclick = () =>{rigthMove()}
+    // span[0].onclick = () =>{leftMove()}
 
   return (
-    <div>
-        <section className='discover'>
+    <div className='section-product-container'>
+        {/* <div>
+            <span  className='let'>left</span>
+            <span  className='let2'>rigth</span>
+        </div> */}
+        <div className='discover'>
             <h2 className='discover-title'>Discover our <br /> planet-friendly offer</h2>
             <div className='discover-buttons-container'>
-                <button onClick={prev} className='discover-button'>
-                    <span className='discover-button-icon1'> <img src={arrowright} alt="" /></span>
+                <button  className='discover-button'>
+                    <span className='discover-button-icon1'> </span>
                 </button>
-                <button onClick={next} className='discover-button'>
-                    <span className='discover-button-icon2'><img src={arrowleft} alt="" /></span>
+                <button  className='discover-button'>
+                    <span className='discover-button-icon2'></span>
                 </button>
             </div>
-            <div className='cards-container'>
-                {
-                    discover.length > 0 ? discover.map( prod => (
-                        <Cards
-                            key={prod.id} 
-                            image={image1}
-                            title={prod.title} 
-                            score={prod.tags[0]} 
-                            minprice={prod.prices.min.amount} 
-                            maxprice={prod.prices.max.amount}
-                        />
-                    )) : <h1>Cargando</h1>
-                }
-            </div>
-            <button className='discover-button'>Browse all products</button>
+        </div>
+        <section className='section-product'>
+            {
+                discover.length > 0 ? discover.map(card => (
+                    <Cards 
+                        title={card.title}
+                        image={imge}
+                        score={card.tags[0]}
+                        minprice={card.prices.min.amount}
+                        maxprice={card.prices.max.amount}
+                        key={card.id}
+
+                    />
+                )): <h1>Cargando</h1>
+            }
         </section>
-        {/* <img src={selectImage} alt="img" />
-        <button onClick={prev}>derecha</button>
-        <button onClick={next}>izq</button> */}
+        <button className='discover-button'>Browse all products</button>
     </div>
   )
 }

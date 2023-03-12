@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavBar } from './NavBar'
-import { Cards } from './Cards'
 import { Carousel } from './Carousel'
 import { Contact } from './Contact'
 import imgf from '../assets/img/main/cleaners.png'

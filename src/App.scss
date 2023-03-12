@@ -120,7 +120,7 @@
     width: 90%;
     margin: 0 auto;
     margin-top: 1rem;
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
     border-radius: 2rem;
     padding: 1rem;
     background: linear-gradient(90deg, rgba(11, 255, 240, 0.2) 2.33%, rgba(98, 207, 250, 0) 48.19%), linear-gradient(180deg, rgba(83, 255, 183, 0.2) 0%, rgba(44, 212, 235, 0) 100%), linear-gradient(121.62deg, #8CD0D5 30.95%, rgba(154, 221, 221, 0.4375) 74.24%, #C6FCFF 107.91%);
@@ -191,11 +191,9 @@
 .discover{
     width: 100vw;
     padding: 0 10px;
-    display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    margin-bottom: rem;
     .discover-title{
         font-size: var(--font-size-p3);
         color: var(--black);
@@ -204,12 +202,11 @@
     .discover-buttons-container{
         position: relative;
         width:100%;
-        height: 4rem;
+        height: 6rem;
         filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.25));
         .discover-button{
             height: 1.5rem;
             margin-right: 1rem;
-            margin-top: 1rem;
             background-color: var(--secondary-red);
             .discover-button-icon1, .discover-button-icon2{
                 position: absolute;
@@ -222,6 +219,12 @@
                 transform: scale(1);
                 border-radius: 50%;
                 background-color: var(--white);
+            }
+            .discover-button-icon1::after{
+                content: url('./assets/icons/arrow-right.svg');
+            }
+            .discover-button-icon2::after{
+                content: url('./assets/icons/arrow-left.svg');
             }
             .discover-button-icon1{
                 right: calc(50% - 1rem);
@@ -239,12 +242,14 @@
 .cards-container{
     width: 100%;
     background-color: red;
-    display: flex;
+    // display: flex;
     justify-content: center;
 }
 .card{
     padding-top: 1rem;
-    width: 100%;
+    width: 90%;
+    background-color: rebeccapurple;
+    margin: 0 auto;
     .card-image{
         width: 24rem;
         height: 24rem;
@@ -488,4 +493,98 @@
     }
 
 
+}
+
+
+.section-product{
+    width: 98%;
+    padding-bottom: 2rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+.section-product .produt{
+    min-width: 30rem;
+    height: 100%;
+    position: relative;
+    left: 0;
+    transition: 0.5s;
+}
+.produt picture{
+    width: 100%;
+    height: 28rem;
+}
+
+.produt picture img{
+    width: 100%;
+}
+
+.produt .details{
+    width: 100%;
+    padding:0 1rem 1rem 1rem;
+}
+.product-details-title{
+    font-size: var(--font-size-p1);
+    font-weight: 500;
+}
+.product-details-description{
+    display: flex;
+    flex-direction: column;
+}
+.product-details-description-prices{
+    display: flex;
+}
+.middle-underline {
+    position: relative; 
+    font-size: var(--font-size-p1);
+    color: var(--gray);
+    margin-right: 1rem;
+}
+.middle-underline::before {
+    content: "";
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: gray;
+    z-index: 1;
+}
+.max-price{
+    font-size: var(--font-size-p1);
+    color: var(--black);
+}
+.product-details-description-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.score{
+    font-size: var(--font-size-p1);
+    color: var(--gray);
+    margin-left: 1rem;
+}
+.product-details-description-image{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background: url('./assets/img/Star.png');
+    background-repeat: no-repeat;
+}
+.section-product-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 4rem;
+}
+@media (max-width: 768px) {
+    .section-product .produt{
+        min-width: 28rem;
+        margin-right: 1rem;
+    }
+    .section-product .produt .details, .button{
+        font-size: 16px;
+    }
 }
