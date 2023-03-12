@@ -93,12 +93,16 @@
             filter: invert(1);
         }
         .garbage{
+            display: inline-block;
             width: 2rem;
             height: 2.3rem;
             background: url('./assets/icons/garbage.svg');
             background-repeat: no-repeat;
             background-size: cover;
             filter: invert(1); 
+        }
+        .aditional-menu{
+            display: none;
         }
     }
     .nav-btn{
@@ -387,14 +391,51 @@
             font-size: var(--font-size-p1);
             color: var(--white);
         }
-        span{
-            width: 4rem;
-            height: 4rem;
+        .social-media{
+            display: inline-block;
+            width: 2rem;
+            height: 2.3rem; 
+            margin-right: 1rem;
+            margin-top: 2rem;
             background: url('./assets/icons/Vector\ \(2\).png');
-            background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            border-radius: 1rem;
+        }
+        .footer-social-description{
+            margin: 5rem 0 ;
+            font-size: var(--font-size-p);
+            color: var(--white);
+        }
+        .footer-cards{
+            width: 20rem;
+            .footer-card1, .footer-card2, .footer-card3, .footer-card4, .footer-card5, .footer-card6, .footer-card7{
+                display: inline-block;
+                width: 4rem;
+                height: 2.5rem; 
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .footer-card1{
+                background: url('./assets/icons/card1.svg');
+            }
+            .footer-card2{
+                background: url('./assets/icons/card2.svg');
+            }
+            .footer-card3{
+                background: url('./assets/icons/card3.svg');
+            }
+            .footer-card4{
+                background: url('./assets/icons/card4.svg');
+            }
+            .footer-card5{
+                background: url('./assets/icons/card5.svg');
+            }
+            .footer-card6{
+                background: url('./assets/icons/card6.svg');
+            }
+            .footer-card7{
+                background: url('./assets/icons/card7.svg');
+            }
         }
 
     }
@@ -429,10 +470,6 @@
         }
     }
     .discover{
-        .discover-buttons-container{
-            .discover-button{
-            }
-        }
         .discover-title{
             padding-left: 8rem;
         }
@@ -461,11 +498,19 @@
                 display: none;
             }
         }
-        .footer-submenu-product{
-            display: block;
-        }
     }
 }
+@media (max-width: 767px) {
+
+    .footer-submenu-product{
+        display:  inline;
+    }
+    .footer-submenu-active{
+        display: flex;
+    }
+    
+}
+
 
 @media only screen and (max-width: 767px){
     .navbar .nav-btn{
