@@ -1,37 +1,36 @@
 import React from 'react'
-import toogle from '../assets/icons/tooglemenu.svg'
+import { useRef } from 'react'
 
 export function NavBar() {
+    const navRef = useRef();
 
-    const handleChange = (e) => {
-        e.preventDefault()
-        const showMenu = document.querySelector('.nav-main-menu')
-        showMenu.classList.toggle('nav-main-menu-show')
+    const showNavbar = () => {
+        navRef.current.classList.toggle('responsive_nav');
     }
 
   return (
-    <nav className='navbar'>
-        <div className='navbar-container'>
-            
-            <div className='toogle-menu' onClick={handleChange}>
-                <img className='toogle-menu-image' src={toogle} alt="" />
-            </div>
-            <div className='nav-main-menu'>
-                <ul className=''>
-                    <li className='nav-main-menu-list'>Brauzz shop <span>i</span></li>
-                    <li className='nav-main-menu-list'>Ontdekken <span>i</span></li>
-                    <li className='nav-main-menu-list'>Over Brauzz <span>i</span></li>
-                </ul>
-            </div>
-            <div>
-                <span>logo</span>
-            </div>
-            <div>
-                <span>iconP</span>
-                <span>iconG</span>
-            </div>
+    <header className='navbar'>
+      <div className='navbar-container'>
+        <span className='nav-btn nav-open' onClick ={showNavbar}></span>
+        <div className='logo'>
+          <span className='logo-1'></span>
+          <span className='logo-2'></span>
+          <span className='logo-3'></span>
         </div>
-
-    </nav>
+        <div>
+          <span>hol</span>
+          <span>hol</span>
+          <span className='garbage'></span>
+        </div>
+        
+        <nav ref={navRef}>
+          <a className='navbar-link' href="">Brauzz shop </a>
+          <a className='navbar-link' href="">Ontdekken </a>
+          <a className='navbar-link' href="">Over Brauzz </a>
+          <span className='nav-btn nav-close-btn' onClick={showNavbar}></span>
+        </nav>
+      </div>
+    </header>
   )
 }
+
