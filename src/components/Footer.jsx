@@ -12,7 +12,7 @@ export function Footer() {
     }
     
   return (
-    <footer className='footer'>
+    <footer id='footer' className='footer'>
         <div className='footer-brand'>
             <div className='logo'>
             <span className='logo-1'></span>

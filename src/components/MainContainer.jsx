@@ -11,7 +11,7 @@ export function MainContainer({quantity, discover}) {
     <main>
         <section className='main-container'>
             <NavBar />
-            <div className='main-images'>
+            <div id='join' className='main-images'>
                 <img className='main-image-1' src={imgf} alt="cleaners.png" />
                 <img className='main-image-2' src={imgf2} alt="kitbassicperspective.png" />
             </div>

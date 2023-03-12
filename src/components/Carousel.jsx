@@ -63,7 +63,7 @@ export function Carousel({discover}) {
     // span[0].onclick = () =>{leftMove()}
 
   return (
-    <div className='section-product-container'>
+    <div id='carousel' className='section-product-container'>
         {/* <div>
             <span  className='let'>left</span>
             <span  className='let2'>rigth</span>

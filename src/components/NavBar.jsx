@@ -22,9 +22,9 @@ export function NavBar() {
         </div>
         
         <nav ref={navRef}>
-          <a className='navbar-link' href="">Brauzz shop </a>
-          <a className='navbar-link' href="">Ontdekken </a>
-          <a className='navbar-link' href="">Over Brauzz </a>
+          <a className='navbar-link' href="#footer" >Brauzz shop </a>
+          <a className='navbar-link' href="#carousel">Ontdekken </a>
+          <a className='navbar-link' href="#join">Over Brauzz </a>
           <span className='nav-btn nav-close-btn' onClick={showNavbar}></span>
         </nav>
       </div>
